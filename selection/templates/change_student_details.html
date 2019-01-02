@@ -1,0 +1,40 @@
+
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="wrap">
+    <form action="" method="post">
+        {% csrf_token %}
+      <div class="fields"> Student Name <br><br> {{ form.student_name }}</div>
+      <div class="fields"> Father's Name <br><br> {{ form.father_name }}</div>
+      <div class="fields"> Enrollment Number <br><br> {{ form.enrollment_no }}</div>
+      <div class="fields"> Course {{ form.course }}</div>
+      <div class="fields"> Date of birth (yyyy-mm-dd) <br><br> {{ form.dob }}</div>
+      <div class="fields"> Gender {{ form.gender }}</div>
+      <div class="fields"> Room {{ form.room }}</div>
+      <input class="button-custom" type="submit" value="DONE">
+    </form>
+  </div>
+{% endblock content %}
+
+
+{% block more_links %}
+    <a href="{% url 'warden_dues' %}">
+        Dues
+    </a>
+    <a href="{% url 'warden_add_due' %}">
+        Add Due
+    </a>
+    <a href="{% url 'warden_remove_due' %}">
+        Remove Due
+    </a>
+    <a href="{% url 'warden_login' %}">
+        List Rooms
+    </a>
+    <a href="{% url 'warden_student_list' %}">
+        List Students
+    </a>
+    <a href="{% url 'logout' %}">
+        Logout
+    </a>
+{% endblock more_links %}
